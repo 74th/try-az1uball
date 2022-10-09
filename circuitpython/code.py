@@ -78,7 +78,7 @@ def main():
         if not ball_pressed and not left_pressed:
             mouse.move(x=x*multi, y=y*multi)
         if left_pressed:
-            mouse.move(wheel=y)
+            mouse.move(wheel=-1*y)
 
         time.sleep(0.02)
 

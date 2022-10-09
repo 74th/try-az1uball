@@ -22,24 +22,17 @@ def setup():
 
 
 def mouse_act_byte(x: int, y: int, scroll: int, click: bool) -> bytes:
-    if(x>127):
-        x=127
-    if(x<-128):
-        x=-128
-    if(y>127):
-        y=127
-    if(y<-128):
-        y=-128
-    b=[0x57,0xab,0x00,0x05,0x05,0x01]
+    # 参考: https://techbookfest.org/product/iaTanH0UsU9j5TPnFT44rF?productVariantID=4Q1yNxZMFWWs9UJbkx7c6b
+    b = [0x57, 0xAB, 0x00, 0x05, 0x05, 0x01]
     b.append(0x00 + int(click))
-    if(x<0):
-        x=0x100+x
-    if(y<0):
-        y=0x100+y
+    if x < 0:
+        x = 0x100 + x
+    if y < 0:
+        y = 0x100 + y
     b.append(x)
     b.append(y)
     b.append(scroll)
-    s=sum(b) & 0xff
+    s = sum(b) & 0xFF
     b.append(s)
 
     return bytes(b)
@@ -59,5 +52,6 @@ def main():
         # print(b[0], b[1], b[2], b[3], b[4], "".join("\\x%02x" % i for i in code))
         ch9329.write(code)
         machine.lightsleep(20)
+
 
 main()

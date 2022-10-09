@@ -1,5 +1,7 @@
 # AZ1UBALL を Raspberry Pi Pico (CircuitPython) で動かす
 
+![](photo.jpg)
+
 [回路図 circuit.pdf](circuit.pdf)
 
 ## Setup
@@ -16,3 +18,4 @@ https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases
 
 - スクロールボタン
 - 左右ボタン
+- ボールプッシュ中は移動を検知しない

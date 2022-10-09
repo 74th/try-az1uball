@@ -1,5 +1,7 @@
 # AZ1UBALL を Raspberry Pi Pico (MicroPython) + CH9329 で動かす
 
+![](photo.jpg)
+
 [回路図 circuit.pdf](circuit.pdf)
 
 CH9329 は UART で操作できる、USB Keyboard/Mouse としてふるまう IC。
